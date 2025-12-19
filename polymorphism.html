@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-
 <h2>JavaScript Encapsulation</h2>
-
 <script> 
-    function Dog() {} //create class/function
+function Dog() {} //create class/function
 var DogType = Dog.prototype; //create prototype
 
 // Create Method 1
@@ -16,28 +14,31 @@ DogType.run = function(speed) {
     this.runString(speed);
   }
 }
-DogType.runString = function(speed){ //attach a sub method to prototype
+DogType.runString = function(speed){ 
   console.log('The dog runs at a speed of ' + speed);
 }
-DogType.runNumber = function(speed){ //attach a sub method to prototype
+DogType.runNumber = function(speed){ 
   console.log('The dog runs at a speed of ' + speed + ' Miles/hr');
 }
 
 //Create Method 2
-
+DogType.eat = function(food) {
+    if (food == 'dry') {
+        console.log('The dog eats dry food');
+    } else if(food == 'wet') {
+        console.log('The dog eats wet food');
+    }
+}
 
 //Create an object
 var dog = new Dog();
 
 //Apply method 1 to object
-dog.run(); //The dog runs at a speed of 15 miles/hr
-dog.run(); //The dog runs at a speed of 20 miles/hr
+dog.run(15); 
+dog.run('20 Miles/hr'); 
 
 //Apply method 2 to object
-
-
+dog.eat('dry'); //The dog eats dry food
 </script>
-
-
 </body>
 </html>

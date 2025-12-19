@@ -7,15 +7,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-
 <div id="vueapp">
-    
+    {{ greeting }}
 </div>
-
 <script>
-
+    var app = new Vue({
+        el: '#vueapp',
+        data: {
+            greeting: 'Hello World!'
+        }
+    });
 </script>
-    
 </body>
 </html>
-

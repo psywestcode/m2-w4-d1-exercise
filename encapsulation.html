@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
 <body>
-
 <h2>JavaScript Encapsulation</h2>
-
 <script>
 //Encapsulation Technique 1: closure scope
-
 function createCircle(radius) {
   return {
       area: function() {
@@ -15,16 +12,16 @@ function createCircle(radius) {
   }
 };
 
-var circle1 = createCircle();
+// Instructions: Pass 3 as radius
+var circle1 = createCircle(3);
 
 //Write console.log here
-
+console.log("Area is " + circle1.area());
+console.log("Radius is " + circle1.radius); // THIS WILL FAIL (undefined)
 
 //Encapsulation Technique 2: private variables
-
-function createCircle(radius) {
+function createCircle2(radius) { // Renamed function slightly to avoid conflict in same script if run together, though instructions imply overwriting or separate scope.
     var diameter = radius * 2;
-
     return {
         area: function() {
             return radius * radius * Math.PI;
@@ -35,13 +32,11 @@ function createCircle(radius) {
     }
 };
 
-var circle2 = createCircle();
+var circle2 = createCircle2(3);
 
 //Write console.log here
-
-
+console.log("Circumference is " + circle2.circumference());
+console.log("Diameter is " + circle2.diameter); // THIS WILL FAIL (undefined)
 </script>
-
-
 </body>
 </html>

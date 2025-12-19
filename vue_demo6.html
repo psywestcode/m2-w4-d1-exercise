@@ -7,20 +7,18 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
-
-    <div id = "component1">
+    <div id="component1">
         <mycomponent1></mycomponent1>
      </div>
-     <div id = "component2">
+     <div id="component2">
         <mycomponent2></mycomponent2>
      </div>
-     <div id = "component3">
-        
+     <div id="component3">
+        <mycomponent2></mycomponent2>
      </div>
-
 <script>
     Vue.component('mycomponent1',{
-        template : '<div><h1>Hello, welcome to VUE Components!</h1></div>'
+        template : '<div><h1>Welcome to VUE Components!</h1></div>'
     });
     Vue.component('mycomponent2',{
         template : '<div><p>VUE is interesting!</p></div>'
@@ -31,8 +29,9 @@
     var vm2 = new Vue({
         el: '#component2'
     });
+    var vm3 = new Vue({
+        el: '#component3'
+    });
 </script>
-    
-</body>`
+</body>
 </html>
-
